@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+   
+spring:
+  boot:
+    admin:
+      context-path: /admin  #A different context path for Spring boot admin server has been provided avoiding conflict with eureka
+      
